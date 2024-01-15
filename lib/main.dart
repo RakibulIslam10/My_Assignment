@@ -287,7 +287,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               ElevatedButton(
                   onPressed: () {
-                    MySnackber(context, "We sorry check out no abalable");
+                    MySnackber(context, "Sorry check out not available");
                   },
                   child: Text('CHECK OUT'),
                   style: ElevatedButton.styleFrom(
