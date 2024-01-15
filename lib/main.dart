@@ -5,12 +5,9 @@ import 'package:flutter/material.dart';
 import 'MyAb.dart';
 import 'DialogBox.dart';
 
-void main() => runApp(
-      DevicePreview(
-        enabled: !kReleaseMode,
-        builder: (context) => MyUi(), // Wrap your app
-      ),
-    );
+void main(){
+  runApp( MyUi());
+}
 
 class MyUi extends StatelessWidget {
   const MyUi({super.key});
