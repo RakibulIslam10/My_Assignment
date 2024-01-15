@@ -6,7 +6,7 @@ import 'MyAb.dart';
 import 'DialogBox.dart';
 
 void main(){
-  runApp( MyUi());
+  runApp( const MyUi());
 }
 
 class MyUi extends StatelessWidget {
@@ -76,14 +76,14 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          PreferredSize(preferredSize: Size.fromHeight(80), child: MyAppBar()),
+          const PreferredSize(preferredSize: Size.fromHeight(80), child: MyAppBar()),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(12.0),
+            const Padding(
+              padding: EdgeInsets.all(12.0),
               child: Text(
                 "My Bag",
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
@@ -98,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Color(0xffFFFFFF),
+                        color: const Color(0xffFFFFFF),
                         borderRadius: BorderRadius.circular(12),
                         boxShadow: [
                           BoxShadow(
@@ -115,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               myProductList[index]["Image"],
                               height: 120,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ),
                             Column(
@@ -124,38 +124,38 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: [
                                 Text(
                                   myProductList[index]["Name"],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 7,
                                 ),
                                 Row(
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Color: ",
                                       style: TextStyle(
                                           color: Colors.grey, fontSize: 13),
                                     ),
                                     Text(
                                       myProductList[index]["Color"].toString(),
-                                      style: TextStyle(fontSize: 11),
+                                      style: const TextStyle(fontSize: 11),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 8,
                                     ),
-                                    Text(
+                                    const Text(
                                       "Size: ",
                                       style: TextStyle(
                                           color: Colors.grey, fontSize: 13),
                                     ),
                                     Text(
                                         myProductList[index]["Size"].toString(),
-                                        style: TextStyle(fontSize: 13)),
+                                        style: const TextStyle(fontSize: 13)),
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 12,
                                 ),
                                 Row(
@@ -171,7 +171,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         }
                                       },
                                       child: Container(
-                                        padding: EdgeInsets.all(6),
+                                        padding: const EdgeInsets.all(6),
                                         decoration: BoxDecoration(
                                             color: Colors.white,
                                             borderRadius:
@@ -183,20 +183,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   spreadRadius: 0,
                                                   blurRadius: 5)
                                             ]),
-                                        child: Icon(CupertinoIcons.minus),
+                                        child: const Icon(CupertinoIcons.minus),
                                       ),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 12,
                                     ),
                                     Text(
                                       myProductList[index]["quantity"]
                                           .toString(),
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 20,
                                       ),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 12,
                                     ),
                                     GestureDetector(
@@ -209,13 +209,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                           showDialog(
                                             context: context,
                                             builder: (context) {
-                                              return MyDialogBox();
+                                              return const MyDialogBox();
                                             },
                                           );
                                         }
                                       },
                                       child: Container(
-                                        padding: EdgeInsets.all(6),
+                                        padding: const EdgeInsets.all(6),
                                         decoration: BoxDecoration(
                                             color: Colors.white,
                                             borderRadius:
@@ -227,7 +227,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   spreadRadius: 0,
                                                   blurRadius: 5)
                                             ]),
-                                        child: Icon(CupertinoIcons.add),
+                                        child: const Icon(CupertinoIcons.add),
                                       ),
                                     ),
                                   ],
@@ -242,13 +242,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             mainAxisAlignment: MainAxisAlignment.end,
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
-                              Icon(Icons.more_vert, color: Color(0xff9B9B9B)),
-                              SizedBox(
+                              const Icon(Icons.more_vert, color: Color(0xff9B9B9B)),
+                              const SizedBox(
                                 height: 45,
                               ),
                               Text(
                                 "${myProductList[index]["Price"] * myProductList[index]["quantity"]}\$",
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 18, fontWeight: FontWeight.bold),
                               ),
                             ],
@@ -272,30 +272,30 @@ class _HomeScreenState extends State<HomeScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     "Total amount:",
                     style: TextStyle(color: Colors.grey),
                   ),
                   Text(
                     "$TotalTaka\$",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               ElevatedButton(
                   onPressed: () {
                     MySnackber(context, "Sorry check out not available");
                   },
-                  child: Text('CHECK OUT'),
                   style: ElevatedButton.styleFrom(
-                      minimumSize: Size(double.infinity, 56),
-                      backgroundColor: Color(0xffDB3022),
+                      minimumSize: const Size(double.infinity, 56),
+                      backgroundColor: const Color(0xffDB3022),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(25),
-                      ))),
+                      )),
+                  child: const Text('CHECK OUT')),
             ],
           ),
         ),
